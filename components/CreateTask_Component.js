@@ -19,32 +19,36 @@ const CreateTask_Component = (props) => {
   const [inputText,setInputText] = useState("");
   const {modalVisible,todotasksArrayval} = props
   
-  
+  function alertMethod(Title,message){
+    Alert.alert(
+      Title,
+      message,
+      [
+          {
+              text: 'OK',
+              onPress: () => console.log('OK pressed')
+          }
+      ],
+      { cancelable: true },
+  );
+  }
 
   function addTaskMethod(){
     if(inputText !== ""){
       let date = new Date();
-      props.modalVisibility(false)
+      
       if(todotasksArrayval.length > 0){
        let valuepresent =  todotasksArrayval.some((item) => {
           return item.taskName == inputText
         })
         if(valuepresent){
-          Alert.alert(
-            'Task Already Added.',
-            '',
-            [
-                {
-                    text: 'OK',
-                    onPress: () => console.log('OK pressed')
-                }
-            ],
-            { cancelable: true },
-        );
+          alertMethod("Task Already Added.","")
         }else{
+          props.modalVisibility(false)
           props.newTask({taskName:inputText, taskId: date});
         }
       }else{
+        props.modalVisibility(false)
         props.newTask({taskName:inputText, taskId: date});
       }
       

@@ -4,8 +4,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Pressable,
-  TouchableWithoutFeedback
 } from 'react-native';
 
 import { customDimensions, colorPalette } from '../utils/index';

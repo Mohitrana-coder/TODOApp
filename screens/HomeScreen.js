@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,9 +16,6 @@ import {
   } from '../components/index';
 
 class HomeScreen extends React.Component {
-  // const [tabNavigation,setTabNavigation] = useState(1);
-  // const [modalVisible,setmodalVisible] = useState(false);
-  // const [todoTasks,settodoTasks] = useState([]);
 
   constructor(props){
     super(props)
